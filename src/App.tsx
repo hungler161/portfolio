@@ -1,4 +1,5 @@
-﻿import { Link, Route, Routes, useLocation } from 'react-router-dom'
+import type { ReactNode } from 'react'
+import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 
 const destinations = [
@@ -126,9 +127,9 @@ function SubPage({
   children,
 }: {
   eyebrow: string
-  title: string
+  title: ReactNode
   description: string
-  children: React.ReactNode
+  children?: ReactNode
 }) {
   return (
     <section className="subpage">
@@ -153,11 +154,14 @@ function SocialPage() {
       title={<>Một chút về <span className="name-highlight">mình.</span></>}
       description="Những nơi bạn có thể theo dõi hành trình và các hoạt động sáng tạo của mình."
     >
-      <a className="detail-row" href="https://instagram.com/" target="_blank" rel="noreferrer">
+      <a className="detail-row" href="https://www.instagram.com/hwg.ler/" target="_blank" rel="noreferrer">
         <span>Instagram</span><span>Ảnh và cuộc sống ↗</span>
       </a>
-      <a className="detail-row" href="https://tiktok.com/" target="_blank" rel="noreferrer">
+      <a className="detail-row" href="https://www.tiktok.com/@hungler.161" target="_blank" rel="noreferrer">
         <span>TikTok</span><span>Video sáng tạo ↗</span>
+      </a>
+      <a className="detail-row" href="https://www.facebook.com/hungler.161/" target="_blank" rel="noreferrer">
+        <span>Facebook</span><span>Chia sẻ cuộc sống ↗</span>
       </a>
     </SubPage>
   )
@@ -211,7 +215,7 @@ function ConnectPage() {
       description="Bạn có ý tưởng, dự án hoặc muốn trao đổi về công nghệ và sáng tạo? Hãy kết nối với mình."
     >
       <a className="detail-row" href="mailto:hungler161@gmail.com">
-        <span>Email</span><span>hungler161@gmail.com↗</span>
+        <span>Email</span><span>hungler161@gmail.com</span>
       </a>
       <a className="detail-row" href="https://github.com/" target="_blank" rel="noreferrer">
         <span>GitHub</span><span>Kết nối trên GitHub ↗</span>
